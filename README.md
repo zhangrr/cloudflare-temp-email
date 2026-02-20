@@ -15,9 +15,10 @@
 克隆软件 git clone
 
 ```bash
-
+#克隆代码
 git clone https://github.com/zhangrr/cloudflare-temp-email
 
+#进入工作目录
 cd cloudflare-temp-mail/worker
 
 #安装依赖包, node版本v24.13.0
@@ -35,7 +36,7 @@ npx wrangler d1 create temp-email-db
 npx wrangler d1 execute temp-email-db --file=../db/schema.sql --remote
 
 #建立kv，会得到id，记下来
-npx wrangler kv namespace create 
+npx wrangler kv namespace create temp-email-kv
 
 #根据实际情况，编辑wrangler.toml
 填入database_id和kv id，修改内容
